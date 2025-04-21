@@ -1,23 +1,51 @@
+/* ✅ Global Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ✅ Root is now full-width */
 #root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* ✅ Optional: Wrap your content in this to center + contain it */
+.content-wrapper {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+/* Logo styles */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Spin animation for React logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +61,12 @@
   }
 }
 
+/* Card style */
 .card {
   padding: 2em;
 }
 
+/* Docs link style */
 .read-the-docs {
   color: #888;
 }
