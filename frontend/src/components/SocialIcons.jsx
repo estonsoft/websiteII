@@ -4,10 +4,10 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 const SocialIcons = () => {
   return (
     <div className="social-icons">
-      <a href="#" className="social-link"><FaFacebookF /></a>
-      <a href="#" className="social-link"><FaTwitter /></a>
-      <a href="#" className="social-link"><FaInstagram /></a>
-      <a href="#" className="social-link"><FaLinkedinIn /></a>
+      <a href="#" className="social-link" style={{ color: 'black' }}><FaFacebookF /></a>
+      <a href="#" className="social-link" style={{ color: 'black' }}><FaTwitter /></a>
+      <a href="#" className="social-link" style={{ color: 'black' }}><FaInstagram /></a>
+      <a href="#" className="social-link" style={{ color: 'black' }}><FaLinkedinIn /></a>
     </div>
   );
 };
