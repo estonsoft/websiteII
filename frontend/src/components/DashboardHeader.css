@@ -1,0 +1,133 @@
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+    width: 1514px;
+    height: 50px;
+    max-width: 100%;
+    position: absolute;
+    top: 17.08px;
+    left: 49.11px;
+    transform: rotate(-0.1deg);
+    z-index: 10;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stacked-logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    margin-left: 2px;
+  }
+  
+  .logo2 {
+    position: relative;
+    top: 2px;
+  }
+  
+  /* Nav Links */
+  .nav-links {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a.active {
+    text-decoration: underline;
+    transform: rotate(0.1deg);
+  }
+  
+  .nav-links a:hover {
+    color: #ddd;
+  }
+  
+  /* Menu Toggle */
+  .menu-toggle {
+    display: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Mobile-Specific Styles */
+  @media screen and (max-width: 768px) {
+    .dashboard-header {
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 0.5rem 1rem;
+      transform: none;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .left-section {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      width: 25%;
+      padding: 1rem 0;
+
+      position: absolute;
+      top: 100%; 
+      right: 0; 
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent dark background */
+      z-index: 99;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .nav-links a {
+      font-size: 14px;
+      color: white;
+      padding: 8px 1rem;
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+    }
+  }
+  .group-logo-container{
+    width: 174.0613603652946;
+height: 37.74519502261958;
+top: 853.71px;
+left: 3592px;
+angle: -0.1 deg;
+color: #ffffff;
+
+  }

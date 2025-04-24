@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import './DashboardHeader.css';
 import Vector from "../assets/Vector-logo.png";
+import Group from "../assets/Group logo.png"
 import shadepro from "../assets/shadepro.png";
 import thinkinnovative from "../assets/THINK INNOVATIVE.png";
 import { FiMenu, FiX } from "react-icons/fi";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "../components/SocialIcons";
+import "../components/SocialIcons.css";
 
 const DashboardHeader = ({ activeLink, setActiveLink }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,13 +23,14 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
             <img src={thinkinnovative} alt="Logo3" className="logo3" />
           </div>
         </div>
+        {/* <div className="group-logo-container">
+          <img src={Group} alt="group logo"/>
+        </div> */}
 
-        {/* Menu Toggle Only for Mobile */}
         <div className="menu-toggle mobile-only" onClick={toggleMenu}>
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+           <FiMenu size={24} />
         </div>
 
-        {/* Navigation Links */}
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           {["home", "aboutus", "services", "contact"].map((section) => (
             <a
@@ -35,7 +39,7 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
               className={activeLink === `#${section}` ? "active" : ""}
               onClick={() => {
                 setActiveLink(`#${section}`);
-                setMenuOpen(false); // close menu on click
+                setMenuOpen(false);
               }}
             >
               {section.charAt(0).toUpperCase() +
@@ -44,7 +48,6 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
           ))}
         </nav>
       </div>
-
       <SocialIcons />
     </header>
   );
