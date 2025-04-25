@@ -1,11 +1,15 @@
-// components/DashboardHeader.jsx
-import React from "react";
+import React, { useState } from "react";
 import Vector from "../assets/Vector-logo.png";
 import shadepro from "../assets/shadepro.png";
 import thinkinnovative from "../assets/THINK INNOVATIVE.png";
+import { FiMenu, FiX } from "react-icons/fi";
 import SocialIcons from "./SocialIcons";
 
 const DashboardHeader = ({ activeLink, setActiveLink }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
   return (
     <header className="dashboard-header">
       <div className="left-section">
@@ -17,13 +21,22 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
           </div>
         </div>
 
-        <nav className="nav-links">
+        {/* Menu Toggle Only for Mobile */}
+        <div className="menu-toggle mobile-only" onClick={toggleMenu}>
+          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </div>
+
+        {/* Navigation Links */}
+        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           {["home", "aboutus", "services", "contact"].map((section) => (
             <a
               key={section}
               href={`#${section}`}
               className={activeLink === `#${section}` ? "active" : ""}
-              onClick={() => setActiveLink(`#${section}`)}
+              onClick={() => {
+                setActiveLink(`#${section}`);
+                setMenuOpen(false); // close menu on click
+              }}
             >
               {section.charAt(0).toUpperCase() +
                 section.slice(1).replace("us", " Us")}

@@ -23,10 +23,11 @@ html, body {
 
 /* ✅ Optional: Wrap your content in this to center + contain it */
 .content-wrapper {
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 20px solid red;
 }
 
 /* Logo styles */

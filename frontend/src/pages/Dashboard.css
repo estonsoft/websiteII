@@ -18,12 +18,15 @@ body {
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100vh;
+  width: 1599.9999036264994px;
+  max-width: 100%;
+  height: 675.999959282196px;
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 20px;
+  padding: 1rem;
+  left: 1.14px;
+  transform: rotate(-0.1deg);
 }
 
 /* Header */
@@ -33,7 +36,14 @@ body {
   align-items: center;
   color: white;
   flex-wrap: wrap;
-  gap: 20px;
+  width: 1514px;
+  height: 50px;
+  max-width: 100%;
+  position: absolute;
+  top: 17.08px;
+  left: 49.11px;
+  transform: rotate(-0.1deg);
+  z-index: 10;
 }
 
 .logo-container {
@@ -49,26 +59,21 @@ body {
   margin-left: 2px;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-}
-
 .logo2 {
   position: relative;
   top: 2px;
 }
 
+/* Nav Links */
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 48px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .nav-links a {
   font-family: 'DM Sans', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -78,7 +83,6 @@ body {
 }
 
 .nav-links a.active {
-  font-weight: 700;
   text-decoration: underline;
   transform: rotate(0.1deg);
 }
@@ -87,240 +91,12 @@ body {
   color: #ddd;
 }
 
-/* .social-icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-  flex-wrap: wrap;
-} */
-
-/* .social-icons a {
-  color: black;
-} */
-
-/* .social-icons a:hover {
-  color: #ddd;
-} */
-
-/* Hero Content Section */
-.dashboard-content {
-  padding: 60px 0 20px;
-  color: white;
-  max-width: 600px;
-  z-index: 1;
-}
-
-.dashboard-content h1 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 30px;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.cta-button {
-  padding: 12px 24px;
-  background-color: #A7F46A;
-  color: black;
-  font-weight: 600;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button .arrow {
-  font-size: 18px;
-  transform: translateY(-1px);
-}
-
-.cta-button:hover {
-  background-color: #94dc5c;
-}
-
-/* Thumbnail Buttons */
-.image-buttons {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.bg-thumbnail {
-  border: none;
-  display: inline-block;
-  pointer-events: auto;
-}
-
-.bg-thumbnail:hover {
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly brighter on hover */
-}
-
-.bg-thumbnail.active {
-  background-color: #ffffff; /* Bright white when active */
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8); /* Soft glow when active */
-  opacity: 1;
-}
-
-
-/* Highlight Section */
-.highlight-wrapper {
-  position: absolute;
-  top: 125px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  flex-wrap: nowrap;
-}
-
-.vector-highlight {
-  width: 26px;
-  height: 30px;
-  margin-right: 8px;
-}
-
-.vector-highlight svg {
-  width: 23px;
-  height: 29px;
-  /* border: 4px solid #A7F46A; */
-}
-
-
-.highlight-text {
-  font-family: 'DM Sans', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 160%;
-  color: #FFFFFF;
-  max-width: 200px;
-}
-
-/* ========================
-     RESPONSIVE BREAKPOINTS
-     ======================== */
-
-/* Medium screens */
-@media (max-width: 1024px) {
-  .dashboard-content h1 {
-    font-size: 32px;
-  }
-
-  .highlight-wrapper {
-    top: 100px;
-  }
-}
-
-/* Small screens */
-@media (max-width: 768px) {
-  .dashboard-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .dashboard-content h1 {
-    font-size: 28px;
-  }
-
-  .highlight-wrapper {
-    flex-direction: row;
-    top: 80px;
-    left: 10px;
-  }
-
-  .dashboard-content {
-    padding: 40px 0 20px;
-  }
-
-  .image-buttons {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 30px;
-  }
-}
-
-/* Extra-small screens */
-@media (max-width: 480px) {
-  .dashboard-content h1 {
-    font-size: 24px;
-  }
-
-  .highlight-text {
-    font-size: 14px;
-  }
-
-  .nav-links {
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* .social-icons {
-    justify-content: flex-start;
-  } */
-}
-.social-link {
-  color: #aaa;
-  font-size: 18px;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.social-link:hover {
-  color: #fff;
-}
-
-.left-section {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  /* Adjust spacing between logo and nav */
-}
-
-
-.hero-content {
-  position: absolute;
-  width: 602px;
-  height: 348px;
-  top: 174.41px;
-  left: 244.85px;
-  transform: rotate(-0.1deg);
-  border-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* padding: 24px; */
-  color: #fff;
-}
-
-
-.hero-heading {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 115%;
-  letter-spacing: -1%;
-  color: #FFFFFF;
-  transform: rotate(0.1deg);
-  margin: 0;
-  text-align: left;
-}
-
+/* CTA Button */
 .cta-button {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 2rem;
   background: #A7F46A;
   border-radius: 8px;
   border: none;
@@ -343,32 +119,193 @@ body {
 }
 
 .cta-button .arrow-icon {
-  width: 1rem;
-  height: 1rem;
   font-size: 20px;
+  color: #000000;
+  border: 2px;
 }
 
-/* RESPONSIVE BEHAVIOR */
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 1.5rem;
-  }
-
-  .cta-button {
-    padding: 0.75rem 1.25rem;
-  }
+/* Alert Container */
+.alert-container {
+  width: 1601px;
+  max-width: 100%;
+  height: 140px;
+  background: #473BF0;
+  position: absolute;
+  top: 676px;
+  left: 45px;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 150px;
+  font-family: 'DM Sans', sans-serif;
 }
 
-@media (max-width: 480px) {
-  .hero-heading {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
-  }
+/* Stat Boxes */
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 320px;
+  text-align: left;
+  flex: 1 1 0;
+}
 
-  .cta-button span {
-    font-size: 0.875rem;
-  }
+.stat-box h2 {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -1.8px;
+}
 
-  .cta-button .arrow-icon {
-    font-size: 1.25rem;
-  }
+.stat-box p {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+  white-space: normal;
+}
+
+/* Thumbnail Buttons */
+.image-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bg-thumbnail {
+  border: none;
+  display: inline-block;
+  pointer-events: auto;
+}
+
+.bg-thumbnail:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-thumbnail.active {
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+/* Highlight Section */
+.highlight-wrapper {
+  position: absolute;
+  top: 125px;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  flex-wrap: nowrap;
+}
+
+.vector-highlight {
+  width: 23;
+  height: 29;
+  top: 125.35px;
+  left: 244.57px;
+  border-width: 4px;
+
+
+}
+
+.vector-highlight svg {
+  width: 23px;
+  height: 29px;
+}
+
+.highlight-text {
+  width: 26px;
+  height: 30px;
+  margin-right: 8px;
+  width: 198;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0px;
+
+}
+
+/* Hero Section */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.hero-content {
+  position: absolute;
+  width: 602px;
+  height: 348px;
+  top: 174.41px;
+  left: 244.85px;
+  transform: rotate(-0.1deg);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  color: #fff;
+}
+
+.hero-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: -1%;
+  color: #FFFFFF;
+  transform: rotate(0.1deg);
+  margin: 0;
+  text-align: left;
+}
+
+/* Menu Toggle (Hamburger) */
+.menu-toggle {
+  display: none;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 24px;
+  position: absolute;
+  top: 17.3px;
+  left: 1363.06px;
+  width: 151.99999084451744px;
+  height: 19.99999879533124px;
+  transform: rotate(-0.1deg);
+  z-index: 10;
+  /* Ensure it appears above other elements */
+}
+
+.social-link {
+  color: #101010;
+  /* Icon color */
+  font-size: 20px;
+  /* Adjusted size to fit within the provided dimensions */
+  width: 19.99999879533124px;
+  height: 19.99999879533124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #ddd;
+  /* Hover effect for the icons */
 }
