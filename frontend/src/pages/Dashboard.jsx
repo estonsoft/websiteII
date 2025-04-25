@@ -6,30 +6,13 @@ import BG3 from '../assets/BG3.png';
 import BG4 from '../assets/BG4.png';
 import DashboardHeader from "../components/DashboardHeader";
 import BackgroundSelector from "../components/BackgroundSelector";
-import Alert from "./Alert";
+import '../components/Alert.css';
+import Alert from "../components/Alert";
+
 
 const Dashboard = () => {
   const [activeLink, setActiveLink] = useState('#home');
   const [bgImage, setBgImage] = useState(BG);
-
-  const buttonStyles = [
-    { top: '582.42px', left: '246.16px' },
-    { top: '582.48px', left: '286.16px' },
-    { top: '582.55px', left: '326.16px' },
-    { top: '582.61px', left: '366.16px' }
-  ];
-
-  const commonStyle = {
-    position: 'absolute',
-    width: '32px',
-    height: '6px',
-    transform: 'rotate(-0.1deg)',
-    borderRadius: '30px',
-    cursor: 'pointer',
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    transition: 'background-color 0.2s, box-shadow 0.2s, opacity 0.2s',
-    opacity: 0.8,
-  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -37,7 +20,8 @@ const Dashboard = () => {
         className="dashboard-container"
         style={{
           width: '100%',
-          maxWidth: '1600px',
+          maxWidth: '1601px',
+          height:'676px',
           position: 'relative',
           transform: 'rotate(-0.1deg)',
           backgroundImage: `url(${bgImage}), linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 0%, #161C2D 99.54%)`,
@@ -94,7 +78,7 @@ const Dashboard = () => {
           className="hero-content"
           style={{
             width: '100%',
-            maxWidth: '600px',
+            maxWidth: '602px',
             borderRadius: '8px',
             display: 'flex',
             flexDirection: 'column',
@@ -106,7 +90,7 @@ const Dashboard = () => {
             margin: '0 auto'
           }}
         >
-          <h1 className="hero-heading" style={{ fontSize: '53px' }}>
+          <h1 className="hero-heading" style={{ fontSize: '50px' }}>
             Unlock your ideas with <br />
             Estonsoft's <br />
             transformative <br />

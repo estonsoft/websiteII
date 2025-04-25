@@ -1,0 +1,41 @@
+/* Background Selector */
+.background-selector {
+    position: relative;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .bg-button {
+    position: absolute;
+    width: 32px;
+    height: 6px;
+    transform: rotate(-0.1deg);
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+    opacity: 0.8;
+  }
+  
+  .bg-button.active {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Mobile-Specific Styles */
+  @media screen and (max-width: 768px) {
+    .background-selector {
+      margin: 1rem 0;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      padding:16px
+    }
+  
+    .bg-button {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+      transform: none;
+    }
+  }
