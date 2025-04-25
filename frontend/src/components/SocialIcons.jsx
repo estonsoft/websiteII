@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import {  FaFacebook , FaTwitter, FaInstagram, FaLinkedin  } from 'react-icons/fa';
 
 const SocialIcons = () => {
   const [iconColor, setIconColor] = useState('black');
@@ -23,10 +23,10 @@ const SocialIcons = () => {
 
   return (
     <div className="social-icons">
-      <a href="#" className="social-link" style={{ color: iconColor }}><FaFacebookF /></a>
+      <a href="#" className="social-link" style={{ color: iconColor }}><FaFacebook /></a>
       <a href="#" className="social-link" style={{ color: iconColor }}><FaTwitter /></a>
       <a href="#" className="social-link" style={{ color: iconColor }}><FaInstagram /></a>
-      <a href="#" className="social-link" style={{ color: iconColor }}><FaLinkedinIn /></a>
+      <a href="#" className="social-link" style={{ color: iconColor }}><FaLinkedin  /></a>
     </div>
   );
 };

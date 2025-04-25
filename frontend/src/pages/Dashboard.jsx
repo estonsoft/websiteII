@@ -20,7 +20,7 @@ const Dashboard = () => {
         className="dashboard-container"
         style={{
           width: '100%',
-          maxWidth: '1600px',
+          maxWidth: '1601px',
           height:'676px',
           position: 'relative',
           transform: 'rotate(-0.1deg)',

@@ -1,4 +1,3 @@
-/* Alert Container */
 .alert-container {
   width: 1601px;
   height: 140px;
@@ -88,22 +87,25 @@
     flex-direction: column;
     gap: 20px;
     padding: 1rem;
+    align-items: flex-start; /*  align to the left */
   }
 
   .stat-box {
     max-width: 100%;
     gap: 8px;
+    /*align-items: flex-start; /* align content inside to the top left */
+    text-align: left;         /*  ensure text is also left-aligned */
   }
 
   .stat-box h2 {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 40px;
+    text-align: left;
   }
 
   .stat-box p {
     font-size: 14px;
     line-height: 24px;
-    white-space: normal;
-    opacity: 0.8;
+    text-align:left;
   }
 }
