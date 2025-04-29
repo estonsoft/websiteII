@@ -6,8 +6,6 @@ import BG3 from '../assets/BG3.png';
 import BG4 from '../assets/BG4.png';
 import DashboardHeader from "../components/DashboardHeader";
 import BackgroundSelector from "../components/BackgroundSelector";
-import '../components/Alert.css';
-import Alert from "../components/Alert";
 
 
 const Dashboard = () => {
@@ -19,7 +17,7 @@ const Dashboard = () => {
       <div
         className="dashboard-container"
         style={{
-          width: '100%',
+          width: '1601px',
           maxWidth: '1601px',
           height:'676px',
           position: 'relative',
@@ -107,7 +105,6 @@ const Dashboard = () => {
           onChange={setBgImage}
         />
       </div>
-      <Alert />
     </div>
   );
 };

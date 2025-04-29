@@ -1,0 +1,102 @@
+/* Alert container */
+.alert-container {
+  position: absolute;
+  width: 1601px;
+  height: 140px;
+  left: 0px;
+  top: 676px;
+  background: #473BF0;
+}
+
+/* Common styles for all alert items */
+.alert-item {
+  position: absolute;
+  font-family: 'DM Sans', sans-serif;
+  color: #FFFFFF;
+}
+
+/* 1M+ */
+.alert-title {
+  left: 17.05%;
+  right: 64.52%;
+  top: 27.14%;
+  bottom: 31.43%;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -1.8px;
+}
+
+/* Customers visit Albi */
+.alert-subtitle {
+  left: 24.61%;
+  right: 64.52%;
+  top: 27.14%;
+  bottom: 31.43%;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+  opacity: 0.7;
+}
+
+/* Percentage (93%) container */
+.alert-percentage-container {
+  left: 41.41%;
+  right: 40.47%;
+  top: 27.14%;
+  bottom: 31.43%;
+}
+
+/* 93% */
+.alert-percentage {
+  position: absolute;
+  height: 58px;
+  left: 0%;
+  right: 66.55%;
+  top: calc(50% - 58px / 2);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -1.8px;
+}
+
+/* Satisfaction rate fr */
+.alert-description {
+  position: absolute;
+  left: 40%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  font-size: 17px;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+  opacity: 0.7;
+}
+
+/* Rating (4.9) container */
+.alert-rating-container {
+  left: 65.15%;
+  right: 18.36%;
+  top: 27.14%;
+  bottom: 31.43%;
+}
+
+/* 4.9 */
+.alert-rating-container .alert-percentage {
+  left: 0%;
+  right: 74.24%;
+  top: calc(50% - 58px / 2);
+}
+
+/* Average customer rat */
+.alert-rating-container .alert-description {
+  left: 34.09%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+  /* Mobile-Specific Styles */
+  @media screen and (max-width: 768px) {
+    
+  }
