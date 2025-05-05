@@ -4,6 +4,8 @@ import Alert from './Alert';
 import Dashboard from './Dashboard';
 import WhatWeDo from './WhatWeDo';
 import OurWork from './OurWork';
+import CTAForm from './CTAForm';
+import Footer from './Footer';
 const HomePage = () => {
   return (
     <div>
@@ -25,6 +27,16 @@ const HomePage = () => {
       <section id="section5" >
       <OurWork />
       </section>
+
+      <section id="section6" >
+      <CTAForm />
+      </section>
+
+      <section id="section7" >
+      <Footer />
+      </section>
+    
+
     </div>
   );
 };

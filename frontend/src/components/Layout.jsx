@@ -13,7 +13,8 @@ const Layout = ({ children }) => {
         backgroundColor: '#FFFFFF', 
         display: 'flex',
          flexDirection: 'column', 
-         alignItems: 'center' 
+         alignItems: 'center', 
+        // justifyContent:'center',
       }}
     >
       {children}
