@@ -2,8 +2,8 @@
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  width: 1599.9999036264994px; /* Exact width */
-  height: 675.999959282196px; /* Exact height */
+  width:1601px; /* Exact width */
+  height: 676px; /* Exact height */
   max-width: 1601px;
   position: relative;
   left: 1.14px; /* Fine-tune positioning */
@@ -56,6 +56,7 @@
   top: 125px;
   left: 250px;
   display: flex;
+  gap: 8px;
   align-items: center;
   z-index: 2;
   flex-wrap: nowrap;
@@ -72,7 +73,7 @@
 }
 
 .highlight-text {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 160%;
   color: #fff;
@@ -98,7 +99,7 @@
 .hero-heading {
   font-family: 'Urbanist', sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 3.02rem;
   line-height: 1.2;
   letter-spacing: -1%;
   color: #FFFFFF;
@@ -122,7 +123,7 @@
   .highlight-wrapper {
     position: relative;
     top: auto;
-    left: -3.75rem;
+    left: -5rem;
     margin: 1rem auto;
     justify-content: center;
   }

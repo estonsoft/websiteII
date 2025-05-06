@@ -31,9 +31,9 @@
   @media screen and (max-width: 768px) {
     .social-icons {
       position: relative;
-      top:-40px;
+      top:0px;
       left: auto;
-      right: 115px;
+      right: 210px;
       width: auto;
       transform: none;
       margin: 1rem ;
