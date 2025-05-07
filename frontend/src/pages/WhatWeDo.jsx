@@ -56,7 +56,6 @@ const WhatWeDo = () => {
           <div
             className="service-card"
             key={index}
-            style={{ top: service.top, left: service.left }}
           >
             <div className="icon-bg"></div>
             <img src={`/${service.icon}`} alt={service.title} className="icon" />
