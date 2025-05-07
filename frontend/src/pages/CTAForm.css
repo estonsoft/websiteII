@@ -180,3 +180,80 @@
   line-height: 27px;
   color: #B3BAC5;
 }
+
+
+@media screen and (max-width: 768px) {
+  .cta-form-wrapper {
+    position: relative;
+    width: 91%;
+    height: auto;
+    padding: 40px 20px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -1450px;
+    left: 0;
+  }
+
+  .cta-bg-overlay {
+    display: none; /* or adjust opacity if needed */
+  }
+
+  .cta-text-heading,
+  .cta-subtext,
+  .cta-dashed-line,
+  .cta-secondary-heading,
+  .cta-small-text {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .cta-text-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .cta-subtext {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .cta-secondary-heading {
+    font-size: 18px;
+  }
+
+  .cta-small-text {
+    font-size: 15px;
+  }
+
+  .cta-dashed-line {
+    width: 80%;
+    margin: 0 auto 20px;
+    transform: none;
+  }
+
+  .cta-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+  }
+
+  .input-group {
+    width: 100%;
+    height: auto;
+  }
+
+  .cta-card button {
+    width: 100%;
+  }
+}
