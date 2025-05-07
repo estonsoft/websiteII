@@ -7,7 +7,6 @@ import munchi from "../assets/munchi.png";
 import image4 from "../assets/image 4.png";
 import news11 from "../assets/news1 1.png";
 import matremony1 from "../assets/matremonyWhatsApp.png";
-
 import munich1 from "../assets/munich 1.png";
 
 const OurWork = () => {
@@ -23,7 +22,7 @@ const OurWork = () => {
         <span className="arrow-icon">↗</span>
       </button>
 
-      <div className=" project-1">
+      <div className="project project-1">
         <img className="project1_img1"src={fitness1} alt="Fitness App" />
         <div className="rectangle-39915">
           <img
@@ -40,7 +39,7 @@ const OurWork = () => {
       
       </div>
 
-      <div className=" project-2">
+      <div className="project project-2">
         <img className="project2_img1" src={image4} alt="image 4 prothom" />
         <img className="project2_img2" src={news11} alt="p2minImg" />
         
@@ -51,8 +50,7 @@ const OurWork = () => {
 
       </div>
 
-
-      <div className=" project-3">
+      <div className="project project-3">
         <img className="project3_img1" src={matremony} alt="Matrimony App" />
         <img className="project3_img2" src={matremony1} alt="p2minImg" />
       
@@ -63,7 +61,7 @@ const OurWork = () => {
     
       </div>
 
-      <div className=" project-4">
+      <div className="project project-4">
         <img className="project4_img1" src={munchi} alt="City Maps App" />
         <div class="rectangle39914">
         <img className="project4_img2" src={munich1} alt="City Maps App min" />
@@ -81,11 +79,3 @@ const OurWork = () => {
 };
 
 export default OurWork;
-
-{/* <div className=" project-3">
-  <img src={FitnessMinImg} alt="Training App" />
-  <h3>App for Training for real people with real goal</h3>
-  <button className="view-details">
-    View Details <span className="arrow-icon">↗</span>
-  </button>
-</div> */}
