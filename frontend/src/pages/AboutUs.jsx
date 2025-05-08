@@ -18,7 +18,7 @@ const AboutUs = () => {
         <div className="image-overlay" />
         <span className="badge">Ready for future</span>
         <h3 className="overlay-title">Leveraging tech to drive a better IT experience</h3>
-        <button className="cta-button">
+        <button className="cta-button-about-us">
           See Incredible Work <ArrowUpRight size={24} />
         </button>
       </div>

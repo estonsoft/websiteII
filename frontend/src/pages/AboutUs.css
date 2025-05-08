@@ -91,7 +91,7 @@
     text-align: left;
 }
 
-.cta-button {
+.cta-button-about-us {
     position: relative;
     top: 400px;
     left: 30px;
@@ -208,8 +208,8 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 810px;
-    left: 1077px;
+    top: 50%;
+    left: 75%;
     background-size: contain;
     border: none;
     cursor: pointer;
@@ -292,13 +292,15 @@
         width: calc(100% - 48px);
     }
 
-    .cta-button {
+    .cta-button-about-us {
         position: relative;
         top: 20px;
         left: 0;
-        width: 100%;
+        width: 55%;
         height: 48px;
         font-size: 14px;
+        top: 20px;
+        left: 20px;
     }
 
     .about-us-cards {
@@ -324,7 +326,7 @@
     }
 
     .card-button {
-        font-size: 20px;
+        font-size: 16px;
         position: relative;
         bottom: 0;
         left: 0;
