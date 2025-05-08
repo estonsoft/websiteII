@@ -123,9 +123,9 @@
   .highlight-wrapper {
     position: relative;
     top: auto;
-    left: -5rem;
-    margin: 1rem auto;
-    justify-content: center;
+    left: 1rem;
+    margin: 1rem 0;
+    justify-content: flex-start;
   }
 
   /* Hero Section */

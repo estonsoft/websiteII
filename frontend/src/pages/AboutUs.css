@@ -175,7 +175,7 @@
 }
 
 /* Ellipses */
-.ellipse {
+/* .ellipse {
     position: absolute;
     border: 1px solid #D6D6D6;
     transform: rotate(90deg);
@@ -202,7 +202,7 @@
     border: 1px solid #D6D6D6;
     border-radius: 50%;
     transform: rotate(-89.88deg);
-}
+} */
 
 .ArrowUpRight {
     width: 24px;
@@ -225,7 +225,7 @@
         left: 0;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
 
     .about-us-header {
@@ -252,14 +252,16 @@
         font-size: 14px;
         height: auto;
         padding:0px 10px;
+        position: relative;
+        top: -25%;
     }
 
     .main-image-block {
         position: relative;
-        width: 100%;
+        width: 91%;
         height: 350px;
         margin-top: 40px;
-        left: 0;
+        left: 20px;
         top: 0;
         background: url('../assets/AboutUsRectangle.png');
         background-size: cover;
@@ -304,14 +306,15 @@
         top: 0;
         left: 0;
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
     }
 
     .card {
         position: relative;
-        width: 100%;
+        width: 91%;
         height: auto;
         top: 0;
+        left: 20px;
         padding: 10px;
     }
 
@@ -330,14 +333,15 @@
 
     .card-expert {
         height: auto;
-        left: 0px;
+        width: 91%;
+        left: 20px;
     }
 
-    .ellipse,
+    /* .ellipse,
     .ellipse-1,
     .ellipse-2 {
         display: none;
-    }
+    } */
 
     .ArrowUpRight {
         position: static;
