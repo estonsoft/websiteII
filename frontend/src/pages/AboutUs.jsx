@@ -5,6 +5,9 @@ import { ArrowUpRight } from "lucide-react";
 const AboutUs = () => {
   return (
     <div className="about-us">
+            {/* Decorative Ellipses */}
+            <div className="ellipse ellipse-21" />
+      <div className="ellipse ellipse-19" />
       {/* Header Section */}
       <div className="about-us-header">
         <h2 className="about-us-title">Delivering tech solutions</h2>
@@ -51,9 +54,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Decorative Ellipses */}
-      <div className="ellipse ellipse-1" />
-      <div className="ellipse ellipse-2" />
     </div>
   );
 };
