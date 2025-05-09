@@ -37,5 +37,7 @@
       top: auto !important;
       left: auto !important;
       transform: none;
+      width: 16px;
+      height: 3px;
     }
   }

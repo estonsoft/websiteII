@@ -1,11 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import Dashboard from './pages/Dashboard'
+// src/App.js
+import React from 'react';
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
 
-function App() {
+const App = () => {
   return (
-      <Dashboard />
-  )
-}
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+};
 
-export default App
+export default App;

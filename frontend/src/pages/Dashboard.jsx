@@ -6,8 +6,6 @@ import BG3 from '../assets/BG3.png';
 import BG4 from '../assets/BG4.png';
 import DashboardHeader from "../components/DashboardHeader";
 import BackgroundSelector from "../components/BackgroundSelector";
-import '../components/Alert.css';
-import Alert from "../components/Alert";
 
 
 const Dashboard = () => {
@@ -19,33 +17,16 @@ const Dashboard = () => {
       <div
         className="dashboard-container"
         style={{
-          width: '100%',
-          maxWidth: '1601px',
-          height:'676px',
-          position: 'relative',
-          transform: 'rotate(-0.1deg)',
           backgroundImage: `url(${bgImage}), linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 0%, #161C2D 99.54%)`,
           backgroundBlendMode: 'multiply',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          overflow: 'hidden',
-          padding: '2rem',
-          boxSizing: 'border-box',
         }}
       >
         <DashboardHeader activeLink={activeLink} setActiveLink={setActiveLink} />
 
         <div
           className="highlight-wrapper"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            marginBottom: '20px',
-          }}
         >
-          <div className="vector-highlight" style={{ width: '23px', height: '29px' }}>
+          <div className="vector-highlight">
             <svg
               width="26"
               height="30"
@@ -63,34 +44,14 @@ const Dashboard = () => {
 
           <div
             className="highlight-text"
-            style={{
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#fff',
-              whiteSpace: 'nowrap',
-            }}
           >
             World Best Digital Venture
           </div>
         </div>
 
         <div
-          className="hero-content"
-          style={{
-            width: '100%',
-            maxWidth: '602px',
-            borderRadius: '8px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            gap: '16px',
-            color: '#fff',
-            textAlign: 'center',
-            padding: '10px',
-            margin: '0 auto'
-          }}
-        >
-          <h1 className="hero-heading" style={{ fontSize: '50px' }}>
+          className="hero-content">
+          <h1 className="hero-heading" >
             Unlock your ideas with <br />
             Estonsoft's <br />
             transformative <br />
@@ -107,7 +68,6 @@ const Dashboard = () => {
           onChange={setBgImage}
         />
       </div>
-      <Alert />
     </div>
   );
 };

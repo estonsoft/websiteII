@@ -96,15 +96,15 @@
 
   .menu-toggle {
     display: block;
+    padding: 15px;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 16px;
-    width: 25%;
+    gap: 0%;
     padding: 1rem 0;
-
+    margin-right: 8%;
     position: absolute;
     top: 100%;
     right: 0;
@@ -115,6 +115,8 @@
 
   .nav-links.open {
     display: flex;
+    align-items: center;
+    width:21%;
   }
 
   .nav-links a {

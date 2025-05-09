@@ -1,0 +1,351 @@
+.about-us {
+    position: absolute;
+    width: 1597px;
+    height: 978px;
+    left: 0;
+    top: 816px;
+    background: #FFFFFF;
+    /* position: relative; */
+    /* top: unset;  */
+}
+
+/* Header Section */
+.about-us-header {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    width: 1200px;
+    height: 132px;
+    display: flex;
+    gap: 260px;
+    align-items: center;
+}
+
+.about-us-title {
+    width: 492px;
+    height: 132px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 110%;
+    color: #101010;
+    text-align: left;
+}
+
+.about-us-subtext {
+    width: 448px;
+    height: 52px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #757B8A;
+    text-align: left;
+}
+
+/* Image Block */
+.main-image-block {
+    position: absolute;
+    width: 586px;
+    height: 500px;
+    left: 120px;
+    top: 358px;
+    background: url('../assets/AboutUsRectangle.png');
+    background-size: cover;
+    border-radius: 16px;
+}
+
+.image-overlay {
+    position: absolute;
+    width: 586px;
+    height: 271px;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.6;
+    border-radius: 16px;
+    top: 0;
+    left: 0;
+}
+
+.badge {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: #A7F46A;
+}
+
+.overlay-title {
+    position: absolute;
+    top: 80px;
+    left: 48px;
+    width: 376px;
+    height: 132px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.cta-button-about-us {
+    position: relative;
+    top: 400px;
+    left: 30px;
+    width: 252px;
+    height: 56px;
+    background: #A7F46A;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #101010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Cards */
+.about-us-cards {
+    position: absolute;
+    top: 358px;
+    left: 814px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 285px;
+    height: 236px;
+    border-radius: 16px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.card-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #101010;
+    margin-bottom: 48px;
+    text-align: left;
+}
+
+.card-button {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #101010;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    text-align: left;
+}
+
+/* Specific card backgrounds and positions */
+.card-blog {
+    background: #E0FECD;
+}
+
+.card-workflow {
+    background: #FFF1ED;
+    top: 264px;
+}
+
+.card-expert {
+    background: #F0F0FF;
+    width: 285px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 353px;
+}
+
+/* Ellipses */
+ .ellipse {
+    position: absolute;
+    border: 1px solid #D6D6D6;
+    transform: rotate(90deg);
+    border-radius: 50%;
+}
+
+.ellipse-21 {
+    width: 50%;
+    height: 90%;
+    top: 5%;
+    left: 65%;
+    border: 1px solid #D6D6D6;
+    border-radius: 50%;
+    transform: rotate(-89.88deg);
+}
+
+.ellipse-19 {
+    width: 50%;
+    height: 90%;
+    top: 5%;
+    left: 60%;
+    border: 1px solid #D6D6D6;
+    border-radius: 50%;
+    transform: rotate(-89.88deg);
+} 
+
+.ArrowUpRight {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .about-us {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px 0px;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-us-header {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 20px;
+        padding: 0;
+        top: 0;
+        left: 0;
+    }
+
+    .about-us-title {
+        width: 100%;
+        font-size: 32px;
+        height: auto;
+        margin-top: 30px;
+        padding:0px 10px;
+    }
+
+    .about-us-subtext {
+        width: 100%;
+        font-size: 14px;
+        height: auto;
+        padding:0px 10px;
+        position: relative;
+        top: -25%;
+    }
+
+    .main-image-block {
+        position: relative;
+        width: 91%;
+        height: 350px;
+        margin-top: 40px;
+        left: 20px;
+        top: 0;
+        background: url('../assets/AboutUsRectangle.png');
+        background-size: cover;
+        border-radius: 16px;
+    }
+
+    .image-overlay {
+        position: relative;
+        width: 100%;
+        height: 271px;
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.6;
+        border-radius: 16px;
+        top: 0;
+        left: 0;
+    }
+
+    .badge {
+        top: 24px;
+        left: 24px;
+        font-size: 12px;
+    }
+
+    .overlay-title {
+        top: 60px;
+        left: 24px;
+        font-size: 24px;
+        width: calc(100% - 48px);
+    }
+
+    .cta-button-about-us {
+        position: relative;
+        top: 20px;
+        left: 0;
+        width: 55%;
+        height: 48px;
+        font-size: 14px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .about-us-cards {
+        position: relative;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        position: relative;
+        width: 91%;
+        height: auto;
+        top: 0;
+        left: 20px;
+        padding: 10px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .card-button {
+        font-size: 16px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 16px;
+    }
+
+    .card-expert {
+        height: auto;
+        width: 91%;
+        left: 20px;
+    }
+
+    .ellipse,
+    .ellipse-1,
+    .ellipse-2 {
+        display: none;
+    }
+
+    .ArrowUpRight {
+        position: static;
+        width: 20px;
+        height: 20px;
+    }
+}
