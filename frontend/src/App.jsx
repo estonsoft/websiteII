@@ -1,8 +1,8 @@
-// src/App.js
 import React from 'react';
-import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
+import ServicePage from './pages/ServicesPage/ServicePage';
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicePage/> }/>
         </Routes>
       </Layout>
     </Router>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import './DashboardHeader.css';
 import Vector from "../assets/Vector-logo.png";
-import Group from "../assets/Group logo.png"
 import shadepro from "../assets/shadepro.png";
 import thinkinnovative from "../assets/THINK INNOVATIVE.png";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -12,6 +12,13 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  const sections = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/aboutus" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <header className="dashboard-header">
@@ -28,23 +35,22 @@ const DashboardHeader = ({ activeLink, setActiveLink }) => {
         </div> */}
 
         <div className="menu-toggle mobile-only" onClick={toggleMenu}>
-           <FiMenu size={24} />
+          <FiMenu size={24} />
         </div>
 
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {["home", "aboutus", "services", "contact"].map((section) => (
-            <a
-              key={section}
-              href={`#${section}`}
-              className={activeLink === `#${section}` ? "active" : ""}
+          {sections.map(({ name, path }) => (
+            <Link
+              key={path}
+              to={path}
+              className={activeLink === path ? "active" : ""}
               onClick={() => {
-                setActiveLink(`#${section}`);
+                setActiveLink(path);
                 setMenuOpen(false);
               }}
             >
-              {section.charAt(0).toUpperCase() +
-                section.slice(1).replace("us", " Us")}
-            </a>
+              {name}
+            </Link>
           ))}
         </nav>
       </div>
