@@ -1,0 +1,109 @@
+.newsletter-section {
+    position: relative;
+    width: 1600px;
+    background: #fafafa;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .newsletter-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .newsletter-label {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.26em;
+    color: #707070;
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  .newsletter-title {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #101010;
+    margin-bottom: 16px;
+  }
+  
+  .newsletter-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #757b8a;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding:0px 100px;
+  }
+  
+  .newsletter-input {
+    width: 100%;
+    max-width: 550px;
+    height: 57px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .newsletter-button {
+    background: #a7f46a;
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.6px;
+    height: 57px;
+    padding: 0 100px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .newsletter-button:hover {
+    background: #90df56;
+  }
+  
+  /* Responsive */
+  /* @media (max-width: 768px) {
+    .newsletter-title {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    .newsletter-description {
+      font-size: 14px;
+    }
+  
+    .newsletter-input,
+    .newsletter-button {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .newsletter-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  } */
+  

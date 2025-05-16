@@ -1,0 +1,158 @@
+.process-section {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.process-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 48px;
+
+}
+
+.process-title {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #101010;
+  /* margin-bottom: 20px; */
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+  letter-spacing: 1px;
+}
+
+.process-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #757B8A;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+  letter-spacing: 1px;
+}
+
+/* Process Boxes */
+.process-box {
+  position: relative;
+  width: 311px;
+  height: 299px;
+  background: #F0F0FF;
+  margin-bottom: 40px;
+  display: inline-block;
+  margin-right: 24px;
+  border-radius: 50%;
+}
+
+.outer-circle {
+  position: absolute;
+  width: 253px;
+  height: 253px;
+  border: 1px solid #fff;
+  left: 29px;
+  top: 23px;
+  border-radius: 50%;
+}
+
+.text-content {
+  position: absolute;
+  top: 130px;
+  left: 60px;
+  width: 195px;
+}
+
+.text-content h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #000;
+}
+
+/* Dashed lines */
+.dashed-line {
+  position: absolute;
+  border: 1px dashed #898989;
+}
+
+.line1 {
+  width: 49px;
+  height: 6px;
+  top: 414px;
+  left: 0;
+
+    width: 49.48px;
+  height: 6px;
+  position: absolute;
+  border: 1px solid #898989;
+  transform: rotate(14.04deg);
+}
+
+.line2 {
+  width: 321px;
+  height: 71px;
+  top: 380px;
+  left: 354px;
+  transform: rotate(-19.22deg);
+}
+
+.line3 {
+  width: 295px;
+  height: 63px;
+  top: 310px;
+  left: 986px;
+  transform: rotate(16.9deg);
+}
+
+.line4 {
+  width: 48px;
+  height: 14px;
+  top: 500px;
+  left: 1563px;
+  transform: rotate(19.18deg);
+}
+
+/* Responsive
+@media (max-width: 768px) {
+  .process-title {
+    font-size: 32px;
+  }
+
+  .process-box {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .outer-circle {
+    left: calc(50% - 126.5px);
+  }
+
+  .text-content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .dashed-line {
+    display: none;
+  }
+} */
