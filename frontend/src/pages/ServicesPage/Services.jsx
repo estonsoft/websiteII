@@ -1,10 +1,11 @@
 import React from 'react'
-import ServicePage from './ServicePage'
+// import ServicePage from './ServicePage'
 import OfferedServices from './OfferedServices'
 import ProcessSection from './ProcessSection'
 import NewsletterSection from './NewsletterSection'
 import FAQSection from './FAQSection'
 import Footer from './Footer'
+import ServicePage from './ServicePage'
 
 const Services = () => {
   return (
@@ -15,7 +16,7 @@ const Services = () => {
       <section id="services-section2">
         <OfferedServices />
       </section>
-      <section id="services-section3">
+     <section id="services-section3">
         <ProcessSection />
       </section>
       <section id="services-section4">
@@ -26,7 +27,7 @@ const Services = () => {
       </section>
       <section id="services-section6">
         <Footer />
-      </section>
+      </section> 
     </div>
   )
 }
