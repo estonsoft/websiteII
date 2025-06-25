@@ -71,3 +71,32 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* 1. Prevent horizontal overflow on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. Ensure images and videos are responsive */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. Make sure box-sizing doesn't break layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 4. Ensure text scales properly */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 5. If using flex/grid, allow wrapping */
+.flex-row, .row {
+  flex-wrap: wrap;
+}
