@@ -7,7 +7,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  padding: 2.5rem;
+  padding: 1.5rem 2.5rem ;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -24,9 +24,8 @@
   cursor: pointer;
   transform: rotate(0.1deg);
   transition: background 0.3s ease;
-  position: absolute;
-  top: 260px;
-  left: 5px;
+  position: relative;
+
 }
 
 .cta-button:hover {
@@ -48,10 +47,10 @@
 
 /* Highlight Section */
 .highlight-wrapper {
-  position: absolute;
-  top: 125px;
-  left: 250px;
+  position: relative;
   display: flex;
+  justify-content: flex-start;
+  padding: 2rem 0 0 13rem;
   gap: 8px;
   align-items: center;
   z-index: 2;
@@ -78,16 +77,14 @@
 
 /* Hero Section */
 .hero-content {
-  position: absolute;
-  width: 602px;
-  height: 348px;
-  top: 174.41px;
-  left: 244.85px;
-  transform: rotate(-0.1deg);
+  position: relative;
+  max-width: 602px;
+  max-height: 348px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 2rem 0 0 13rem;
   gap: 16px;
   color: #fff;
 }
@@ -109,7 +106,7 @@
 
   /* Dashboard Container */
   .home-dashboard-container {
-    width:99%;
+    max-width: 768px;
     height: auto;
     padding: 0.5rem;
     left: 0;
@@ -118,22 +115,15 @@
 
   /* Highlight Section */
   .highlight-wrapper {
-    position: relative;
-    top: auto;
-    left: 1rem;
-    margin: 1rem 0;
+    margin-left:-196px;
+    width: 80%;
     justify-content: flex-start;
   }
 
   /* Hero Section */
   .hero-content {
     position: relative;
-    width: 96%;
-    height: auto;
-    top: auto;
-    left: auto;
     padding: 1rem;
-    text-align: center;
   }
 
   .hero-heading {
@@ -145,7 +135,6 @@
 
   /* CTA Button */
   .cta-button {
-    margin: 0;
     padding: 0.5rem 1.5rem;
     transform: none;
   }
@@ -156,5 +145,11 @@
 
   .cta-button .arrow-icon {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home-dashboard-container{
+    max-width:375px;
+    height: auto;
   }
 }

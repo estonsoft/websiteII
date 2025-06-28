@@ -14,7 +14,7 @@ const HomePage = () => {
       <section id="home-section2">
         <Alert />
       </section>
-
+      {/* 
       <section id="home-section3" >
         <AboutUs />
       </section>
@@ -33,7 +33,7 @@ const HomePage = () => {
 
       <section id="home-section7">
         <Footer className="home-footer" />
-      </section>
+      </section> */}
 
     </div>
   );

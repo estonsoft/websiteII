@@ -1,15 +1,16 @@
 /* Background Selector */
 .background-selector {
-    position: relative;
     margin-left: 5px;
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin: 5rem 13rem;
   }
   
   .bg-button {
-    position: absolute;
     width: 32px;
     height: 6px;
-    transform: rotate(-0.1deg);
     border-radius: 30px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.6);
@@ -25,19 +26,16 @@
   /* Mobile-Specific Styles */
   @media screen and (max-width: 768px) {
     .background-selector {
-      margin: 1rem 0;
+      margin: 0;
+      width: 20%;
       display: flex;
       gap: 12px;
       justify-content: flex-start;
       padding:16px
     }
-  
-    .bg-button {
-      position: relative;
-      top: auto !important;
-      left: auto !important;
-      transform: none;
-      width: 16px;
-      height: 3px;
+  }
+  @media screen and (max-width: 480px) {
+    .background-selector {
+      width: 40%;
     }
   }

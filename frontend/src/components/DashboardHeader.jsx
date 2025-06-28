@@ -66,10 +66,6 @@ const DashboardHeader = ( { backgroundImage, iconColor }) => {
       </div>
 
       <div className="right-icons">
-        <div className="social-icons-wrapper">
-          <SocialIcons direction="column" iconColor={iconColor}/>
-        </div>
-
         <div className="mobile-menu-wrapper" style={{ color: finalColor }}>
           <div className="menu-toggle mobile-only" onClick={toggleMenu}>
             {menuOpen ? <AiOutlineClose /> : <FiMenu />}
@@ -118,6 +114,10 @@ const DashboardHeader = ( { backgroundImage, iconColor }) => {
             })}
           </nav>
         </div>
+        <div className="social-icons-wrapper">
+          <SocialIcons direction="column" iconColor={iconColor}/>
+        </div>
+
       </div>
     </header>
   );

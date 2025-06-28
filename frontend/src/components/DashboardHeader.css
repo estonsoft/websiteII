@@ -1,11 +1,8 @@
 .dashboard-header {
-  position: absolute;
-  top: 17.08px;
-  left: 49.11px;
-  width: 1514px;
-  max-width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 1514px;
   height: 50px;
-  transform: rotate(-0.1deg);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -20,7 +17,7 @@
 .header-center {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 2.5rem;
 }
 
 .left-section {
@@ -41,7 +38,7 @@
 /* Navigation */
 .nav-links {
   display: flex;
-  gap: 48px;
+  gap: 3rem;
 }
 
 .nav-links a {
@@ -54,18 +51,6 @@
   transition: all 0.3s ease;
 }
 
-/* .nav-links a.underline {
-  text-decoration: underline;
-} */
-
-/* .nav-links a.bold {
-  font-weight: 700;
-} */
-
-/* .nav-links a.active {
-  transform: rotate(0.1deg);
-  border-bottom: 2px solid #A9F66C;
-} */
 .nav-link.active{
    color: #A9F66C;
   font-weight: bold;
@@ -94,7 +79,7 @@
 .social-icons-wrapper {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .menu-toggle {
@@ -156,10 +141,7 @@
 /* Mobile styles */
 @media screen and (max-width: 768px) {
   .dashboard-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 96%;
+    width: 90%;
     padding: 0.5rem 1rem;
     transform: none;
     flex-direction: column;
@@ -174,13 +156,9 @@
   }
 
   .menu-toggle {
-    display: block;
-    position: relative;
-    top: -1.25rem;
-    left: -15px;
-    padding: 1rem;
-    margin-right: 0.5rem;
-    font-size: 3rem;
+    display: flex;
+    padding: 0 1rem;
+    font-size: 2.5rem;
   }
 
   .nav-links {
@@ -259,6 +237,7 @@
 
   .right-icons {
     margin-left: auto;
+    flex-direction: column;
   }
   .nav-links .dropdown-link {
   color: #000;
@@ -266,4 +245,17 @@
 .nav-links .dropdown-link a:hover{
   color: #A7F46A;
 }
+}
+@media screen and (max-width: 480px) {
+  .dashboard-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 330px;
+    padding: 0.5rem 1rem;
+    transform: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
 }

@@ -22,6 +22,9 @@ const useBackgroundImageBrightness = (imageSrc) => {
       const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
       setIconColor(brightness > 125 ? 'black' : 'white');
+
+       // ✅ Cleanup
+      canvas.width = canvas.height = 0;
     };
   }, [imageSrc]);
 
