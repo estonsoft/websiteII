@@ -4,6 +4,9 @@
   max-width: 800px;
   margin: 0;
   font-family: 'DM Sans', sans-serif;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .leave-title {
@@ -12,6 +15,10 @@
   color: #101010;
   margin-bottom: 2rem;
   /* padding: 0 0.5rem; */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 .comment-form .button {
@@ -30,6 +37,15 @@
   border-radius: 1rem;
   padding: 2.5rem;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 0.4s;
+  transition: box-shadow 0.3s ease;
+}
+
+.comment-form:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .left-side, .right-side {
@@ -40,6 +56,17 @@
   gap: 1.5rem;
   flex: 1;
   margin: 0 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggeredFadeIn 0.6s ease-out forwards;
+}
+
+.left-side {
+  animation-delay: 0.6s;
+}
+
+.right-side {
+  animation-delay: 0.8s;
 }
 
 .right-side {
@@ -59,6 +86,11 @@
   line-height: 100%;
   letter-spacing: 0%;
   font-family: DM Sans, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+  color: #A7F46A;
 }
 
 .form-group input,
@@ -72,6 +104,23 @@
   border: 1px solid #e3e3e3;
   border-radius: 16px;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #A7F46A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(167, 244, 106, 0.15);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #A7F46A;
+  box-shadow: 0 0 0 3px rgba(167, 244, 106, 0.2);
+  transform: translateY(-2px) scale(1.01);
 }
 
 .form-group input::placeholder,
@@ -98,11 +147,23 @@
   line-height: 2rem;
   text-align: center;
   align-self: center;
-  /* transition: background 0.3s ease; */
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(167, 244, 106, 0.3);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 1s;
 }
 
 .submit-btn:hover {
   background: #94e45b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(167, 244, 106, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(167, 244, 106, 0.4);
 }
 
 .submit-btn {
@@ -117,14 +178,52 @@
   border-radius: 8px;
   font-size: 0.875rem;
   text-align: center;
-  animation: fadeInOut 5s ease-in-out;
+  animation: slideInFromBottom 0.4s ease-out;
   opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(167, 244, 106, 0.3);
 }
 
 .submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   background-color: #cccccc;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggeredFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInOut {
