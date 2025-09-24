@@ -100,6 +100,32 @@
     color: #183B56;
 }
 
+.ourportfolios-description {
+    margin-bottom: 1rem;
+}
+
+.ourportfolios-description-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #5A7184;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ourportfolios-read-more {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #36B37E;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.ourportfolios-read-more:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
 .ourportfolios-button {
     font-size: 1.05rem;
     font-weight: 700;
@@ -199,6 +225,14 @@
 
     .ourportfolios-button {
         font-size: 1rem;
+    }
+
+    .ourportfolios-description-text {
+        font-size: 0.9rem;
+    }
+
+    .ourportfolios-read-more {
+        font-size: 0.9rem;
     }
 }
 
