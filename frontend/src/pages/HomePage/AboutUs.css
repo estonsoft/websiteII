@@ -5,6 +5,14 @@
     left: 0;
     background: #FFFFFF;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-us.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Header Section */
@@ -109,6 +117,30 @@
     justify-content: center;
     gap: 10px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    position: relative;
+}
+
+.cta-button-about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+}
+
+.cta-button-about-us:hover::before {
+    left: 100%;
+}
+
+.cta-button-about-us:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(167, 244, 106, 0.4);
+    background: linear-gradient(135deg, #A7F46A 0%, #90E052 100%);
 }
 
 /* Cards */
@@ -128,12 +160,31 @@
     padding: 1rem;
     box-sizing: border-box;
     position: absolute;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(167, 244, 106, 0.3);
+}
+
+.card:hover .card-button {
+    transform: scale(1.1);
+    color: #101010;
+}
+
+.card-blog:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(167, 244, 106, 0.4);
+}
+
+.card-workflow:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 165, 0, 0.3);
+}
+
+.card-expert:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(138, 138, 255, 0.4);
 }
 
 .card-text {
@@ -158,6 +209,7 @@
     bottom: 0.5rem;
     left: 32px;
     text-align: left;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Specific card backgrounds and positions */
@@ -183,8 +235,9 @@
 .ellipse {
     position: absolute;
     border: 1px solid #D6D6D6;
-    transform: rotate(90deg);
     border-radius: 50%;
+    transition: all 0.6s ease;
+    animation: floating 5s ease-in-out infinite;
 }
 
 .ellipse-21 {
@@ -195,6 +248,7 @@
     border: 1px solid #D6D6D6;
     border-radius: 50%;
     transform: rotate(-89.88deg);
+    animation-delay: 0s;
 }
 
 .ellipse-19 {
@@ -205,6 +259,12 @@
     border: 1px solid #D6D6D6;
     border-radius: 50%;
     transform: rotate(-89.88deg);
+    animation-delay: 3s;
+}
+
+.ellipse:hover {
+    transform: scale(1.05) rotate(-89.88deg);
+    border-color: rgba(167, 244, 106, 0.5);
 }
 
 .ArrowUpRight {
@@ -617,4 +677,101 @@
         width: 20px;
         height: 20px;
     }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: rotate(-89.88deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-89.88deg) translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+.animate-scale-up {
+    animation: scaleUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+/* Animation Delays */
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+.delay-1200 {
+    animation-delay: 1.2s;
+}
+
+.delay-1400 {
+    animation-delay: 1.4s;
 }

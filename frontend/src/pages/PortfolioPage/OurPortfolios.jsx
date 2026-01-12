@@ -5,6 +5,7 @@ function OurPortfolios() {
 
   /* Commented out API integration for future reference*/
   const [portfolioData, setPortfolioData] = useState([]);
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
   useEffect(() => {
     const fetchPortfolioData = async () => {
@@ -27,7 +28,14 @@ function OurPortfolios() {
 
     fetchPortfolioData();
   }, []);
-  
+
+  const toggleDescription = (id) => {
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
 
   return (
     <section id="ourportfolios" className="ourportfolios-container">
@@ -50,6 +58,21 @@ function OurPortfolios() {
               />
               <div className="ourportfolios-content">
                 <h3 className="ourportfolios-card-title">{item.title || "Untitled Project"}</h3>
+                {item.description && (
+                  <div className="ourportfolios-description">
+                    <p className="ourportfolios-description-text">
+                      {expandedDescriptions[item.id] ? item.description : `${item.description.slice(0, 95)}`}
+                      {item.description.length > 95 && (
+                        <span
+                          className="ourportfolios-read-more"
+                          onClick={() => toggleDescription(item.id)}
+                        >
+                          {expandedDescriptions[item.id] ? ' Show less' : ' Read more...'}
+                        </span>
+                      )}
+                    </p>
+                  </div>
+                )}
                 <button
                   className="ourportfolios-button"
                   onClick={() => {

@@ -10,6 +10,9 @@
   padding-left: 4vw;
   padding-right: 4vw;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 
@@ -29,6 +32,13 @@
   padding: 3rem 16rem;
   padding-left: 12vw;
   padding-right: 12vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .contact-form {
@@ -45,11 +55,26 @@
   width: 48%;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggeredFadeIn 0.6s ease-out forwards;
+}
+
+.contact-form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.contact-form-group:nth-child(2) {
+  animation-delay: 0.2s;
 }
 
 .message-group {
   width: 100%;
   margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggeredFadeIn 0.6s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 label {
@@ -59,6 +84,11 @@ label {
   line-height: 26px;
   color: #000000;
   margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+label:hover {
+  color: #a7f46a;
 }
 
 .contact-input {
@@ -72,7 +102,19 @@ label {
   border: none;
   border-bottom: 1px solid #a2a2a2;
   outline: none;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+.contact-input:hover {
+  border-bottom-color: #a7f46a;
+  transform: translateX(2px);
+}
+
+.contact-input:focus {
+  transform: translateX(0) scale(1.02);
+  border-bottom-color: #a7f46a;
+  box-shadow: 0 2px 8px rgba(167, 244, 106, 0.2);
 }
 
 
@@ -89,6 +131,23 @@ label {
   line-height: 32px;
   color: #000000;
   cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(167, 244, 106, 0.3);
+  opacity: 0;
+  animation: staggeredFadeIn 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.contact-submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(167, 244, 106, 0.4);
+  background: #9ae65a;
+}
+
+.contact-submit-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(167, 244, 106, 0.4);
 }
 
 .contact-input:focus,
@@ -96,6 +155,8 @@ label {
   background-color: #ffffff;
   /* maintain background on focus */
   border-color: #A7F46A;
+  transform: translateX(0) scale(1.02);
+  box-shadow: 0 2px 8px rgba(167, 244, 106, 0.2);
 }
 
 /* Remove yellow autofill background */
@@ -200,11 +261,73 @@ textarea:-webkit-autofill {
   margin-top: 4px;
   margin-bottom: 8px;
   font-weight: 400;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: errorSlideIn 0.3s ease-out forwards;
+}
+
+.contact-response-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #e8f5e8;
+  color: #2d5a2d;
+  border: 1px solid #a7f46a;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: responseSlideIn 0.4s ease-out forwards;
 }
 
 /* Clear errors on focus */
 .contact-input:focus {
-  border-color: #2196f3 !important;
+  border-color: #a7f46a !important;
   outline: none;
   background-color: #fff;
+  transform: translateX(0) scale(1.02);
+  box-shadow: 0 2px 8px rgba(167, 244, 106, 0.2);
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggeredFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes errorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes responseSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
