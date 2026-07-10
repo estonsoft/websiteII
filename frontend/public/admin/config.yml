@@ -69,3 +69,20 @@ collections:
               - { label: "Publish Date", name: "publishDate", widget: "date", format: "YYYY-MM-DD" }
               - { label: "Author Name", name: "authorName", widget: "string", default: "EstonSoft" }
               - { label: "Cover Image", name: "image", widget: "image" }
+
+      - name: "portfolios"
+        label: "Portfolio Cards Database"
+        file: "frontend/src/data/portfolioData.json"
+        format: "json"
+        fields:
+          - name: "portfolios"
+            label: "Portfolio Cards List"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "Unique ID", name: "id", widget: "string", hint: "A unique identifier (e.g. 'fittheorem-website'). No spaces." }
+              - { label: "Project Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["Web App", "Mobile App"], default: "Web App" }
+              - { label: "Short Description", name: "description", widget: "text", hint: "A 1–2 sentence summary shown on the card." }
+              - { label: "Project Live URL", name: "link", widget: "string", hint: "The full URL to the live project (e.g. https://example.com).", required: false }
+              - { label: "Cover Image", name: "image", widget: "image", hint: "Upload an image or paste a URL. Recommended size: 600×400." }

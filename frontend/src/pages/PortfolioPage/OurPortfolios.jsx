@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import localPortfolioData from '../../data/portfolioData.json';
 import FitTheorem from '../../assets/FitTheorem.png';
 import FitTheoremAndroidApp from '../../assets/FitTheoremAndroidApp.png';
 import FitTheoremiOSApp from '../../assets/FitTheoremiOSApp.jpg';
@@ -26,53 +25,21 @@ const localImageMap = {
 
 const getPortfolioImage = (image) => {
   if (!image) return "https://via.placeholder.com/600x400";
-  if (image.startsWith("http://") || image.startsWith("https://") || image.startsWith("data:")) {
+  if (image.startsWith("http://") || image.startsWith("https://") || image.startsWith("data:") || image.startsWith("/")) {
     return image;
   }
   const filename = image.split('/').pop();
   return localImageMap[filename] || `https://estonsoft.com/uploads/${filename}` || "https://via.placeholder.com/600x400";
 };
 
-function OurPortfolios() {
-  const [portfolioData, setPortfolioData] = useState([]);
+// portfolios prop is passed in from Portfolio.jsx (after API + CMS merge)
+function OurPortfolios({ portfolios = [] }) {
   const [selectedFilter, setSelectedFilter] = useState('All');
-
-  useEffect(() => {
-    const fetchPortfolioData = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/portfolios`, {
-          method: "GET",
-          headers: {
-            Authorization: import.meta.env.VITE_API_TOKEN,
-          },
-        });
-
-        if (!response.ok) throw new Error("Failed to fetch portfolio data");
-
-        const data = await response.json();
-        if (data && data.length > 0) {
-          // Normalize API data to match category fields if not present
-          const normalized = data.map(item => ({
-            ...item,
-            category: item.category || (item.title.toLowerCase().includes('app') ? 'Mobile App' : 'Web App')
-          }));
-          setPortfolioData(normalized);
-        } else {
-          setPortfolioData(localPortfolioData);
-        }
-      } catch (error) {
-        console.error("Error fetching portfolio data, loading local fallback:", error);
-        setPortfolioData(localPortfolioData);
-      }
-    };
-
-    fetchPortfolioData();
-  }, []);
 
   // Filter logic
   const filteredItems = selectedFilter === 'All'
-    ? portfolioData
-    : portfolioData.filter(item => item.category === selectedFilter);
+    ? portfolios
+    : portfolios.filter(item => item.category === selectedFilter);
 
   const filters = ['All', 'Web App', 'Mobile App'];
 

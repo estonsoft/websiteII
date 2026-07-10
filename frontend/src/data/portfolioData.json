@@ -1,74 +1,76 @@
-[
-  {
-    "title": "Fit Theorem Website",
-    "description": "A high-performance web platform offering personalized workout routines, nutrition plans, and goal tracking tools to help real people achieve real fitness results.",
-    "image": "FitTheorem.png",
-    "link": "https://fittheorem.com/",
-    "id": "684a891c30989323369f64a4",
-    "category": "Web App"
-  },
-  {
-    "title": "Fit Theorem Android App",
-    "description": "A sleek, feature-rich Android companion app featuring real-time training analytics, class booking, and virtual health coaching integrated into the mobile environment.",
-    "image": "FitTheoremAndroidApp.png",
-    "link": "https://play.google.com/store/apps/details?id=com.fittheorem&hl=en",
-    "id": "684a8964c4d36befc556bafe",
-    "category": "Mobile App"
-  },
-  {
-    "title": "Fit Theorem iOS App",
-    "description": "A premium iOS training application optimized for Apple devices, syncs with Apple HealthKit, and supports custom workouts and interactive nutrition logging.",
-    "image": "FitTheoremiOSApp.jpg",
-    "link": "https://apps.apple.com/us/app/fittheorem/id1525112049",
-    "id": "684a89c7d141691af3541c37",
-    "category": "Mobile App"
-  },
-  {
-    "title": "Prothom Alo English",
-    "description": "The official online English news portal for Bangladesh's leading newspaper, engineered for lightning-fast page loading and optimized reading layouts.",
-    "image": "NewsPaperWebsite.png",
-    "link": "https://en.prothomalo.com/",
-    "id": "684a8a2430989323369f64a5",
-    "category": "Web App"
-  },
-  {
-    "title": "Prothom Alo Android App",
-    "description": "A lightweight news feed Android app providing breaking news alerts, push notifications, offline bookmarking, and local language optimization.",
-    "image": "NewsPaperAndroidApp.png",
-    "link": "https://play.google.com/store/apps/details?id=com.prothomalo.english&hl=en_IN",
-    "id": "684a8ac8d141691af3541c38",
-    "category": "Mobile App"
-  },
-  {
-    "title": "SrilankanMatrimony Website",
-    "description": "A secure, trusted online matchmaking site for Sri Lankans worldwide, utilizing complex compatibility filtering algorithms and advanced privacy features.",
-    "image": "SrilankanMatrimonyWebsite.png",
-    "link": "https://www.srilankanmatrimony.com/",
-    "id": "684a985ed141691af3541c39",
-    "category": "Web App"
-  },
-  {
-    "title": "SrilankanMatrimony Android App",
-    "description": "The Android application for the premier matchmaking service, featuring interactive user chat, swipe matchmaking, and robust photo verification options.",
-    "image": "SrilankanMatrimonyWebsiteAndroidApp.png",
-    "link": "https://play.google.com/store/apps/details?id=com.srilankanmatrimony",
-    "id": "684a982230989323369f64a6",
-    "category": "Mobile App"
-  },
-  {
-    "title": "Munich Travel Android App",
-    "description": "An offline-first travel companion guide app featuring interactive maps, public transit routes, local recommendation engines, and city guides.",
-    "image": "MunichTravelAndroidApp.png",
-    "link": "https://play.google.com/store/apps/details?id=com.ulmon.android.playmunich&hl=en_IN",
-    "id": "684a989630989323369f64a7",
-    "category": "Mobile App"
-  },
-  {
-    "title": "Munich Travel iOS App",
-    "description": "The iOS city directory guide, utilizing CoreLocation for localized recommendations, offline map caching, and curated restaurant lists.",
-    "image": "MunichTraveliOSApp.png",
-    "link": "https://apps.apple.com/us/app/munich-travel-guide/id386136029",
-    "id": "684a996430989323369f64a8",
-    "category": "Mobile App"
-  }
-]
+{
+  "portfolios": [
+    {
+      "title": "Fit Theorem Website",
+      "description": "A high-performance web platform offering personalized workout routines, nutrition plans, and goal tracking tools to help real people achieve real fitness results.",
+      "image": "FitTheorem.png",
+      "link": "https://fittheorem.com/",
+      "id": "684a891c30989323369f64a4",
+      "category": "Web App"
+    },
+    {
+      "title": "Fit Theorem Android App",
+      "description": "A sleek, feature-rich Android companion app featuring real-time training analytics, class booking, and virtual health coaching integrated into the mobile environment.",
+      "image": "FitTheoremAndroidApp.png",
+      "link": "https://play.google.com/store/apps/details?id=com.fittheorem&hl=en",
+      "id": "684a8964c4d36befc556bafe",
+      "category": "Mobile App"
+    },
+    {
+      "title": "Fit Theorem iOS App",
+      "description": "A premium iOS training application optimized for Apple devices, syncs with Apple HealthKit, and supports custom workouts and interactive nutrition logging.",
+      "image": "FitTheoremiOSApp.jpg",
+      "link": "https://apps.apple.com/us/app/fittheorem/id1525112049",
+      "id": "684a89c7d141691af3541c37",
+      "category": "Mobile App"
+    },
+    {
+      "title": "Prothom Alo English",
+      "description": "The official online English news portal for Bangladesh's leading newspaper, engineered for lightning-fast page loading and optimized reading layouts.",
+      "image": "NewsPaperWebsite.png",
+      "link": "https://en.prothomalo.com/",
+      "id": "684a8a2430989323369f64a5",
+      "category": "Web App"
+    },
+    {
+      "title": "Prothom Alo Android App",
+      "description": "A lightweight news feed Android app providing breaking news alerts, push notifications, offline bookmarking, and local language optimization.",
+      "image": "NewsPaperAndroidApp.png",
+      "link": "https://play.google.com/store/apps/details?id=com.prothomalo.english&hl=en_IN",
+      "id": "684a8ac8d141691af3541c38",
+      "category": "Mobile App"
+    },
+    {
+      "title": "SrilankanMatrimony Website",
+      "description": "A secure, trusted online matchmaking site for Sri Lankans worldwide, utilizing complex compatibility filtering algorithms and advanced privacy features.",
+      "image": "SrilankanMatrimonyWebsite.png",
+      "link": "https://www.srilankanmatrimony.com/",
+      "id": "684a985ed141691af3541c39",
+      "category": "Web App"
+    },
+    {
+      "title": "SrilankanMatrimony Android App",
+      "description": "The Android application for the premier matchmaking service, featuring interactive user chat, swipe matchmaking, and robust photo verification options.",
+      "image": "SrilankanMatrimonyWebsiteAndroidApp.png",
+      "link": "https://play.google.com/store/apps/details?id=com.srilankanmatrimony",
+      "id": "684a982230989323369f64a6",
+      "category": "Mobile App"
+    },
+    {
+      "title": "Munich Travel Android App",
+      "description": "An offline-first travel companion guide app featuring interactive maps, public transit routes, local recommendation engines, and city guides.",
+      "image": "MunichTravelAndroidApp.png",
+      "link": "https://play.google.com/store/apps/details?id=com.ulmon.android.playmunich&hl=en_IN",
+      "id": "684a989630989323369f64a7",
+      "category": "Mobile App"
+    },
+    {
+      "title": "Munich Travel iOS App",
+      "description": "The iOS city directory guide, utilizing CoreLocation for localized recommendations, offline map caching, and curated restaurant lists.",
+      "image": "MunichTraveliOSApp.png",
+      "link": "https://apps.apple.com/us/app/munich-travel-guide/id386136029",
+      "id": "684a996430989323369f64a8",
+      "category": "Mobile App"
+    }
+  ]
+}
