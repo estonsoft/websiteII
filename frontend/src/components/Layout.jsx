@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        overflowX: 'hidden', // prevent horizontal scroll
+        overflowX: 'clip', // prevent horizontal scroll without breaking sticky
       }}
     >
       {children}

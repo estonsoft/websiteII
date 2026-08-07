@@ -13,6 +13,8 @@ import SalesforcePage from './pages/ServicesSubPages/Salesforce/SalesforcePage';
 import CI_CD_DevOpsPage from './pages/ServicesSubPages/CI-CD-DevOps/CI_CD_DevOpsPage';
 import Portfolio from './pages/PortfolioPage/Portfolio';
 import BlogDetails from './pages/BlogDetails/BlogDetails';
+import CaseStudy from './pages/CaseStudyPage/CaseStudy';
+import CaseStudyDetails from './pages/CaseStudyPage/CaseStudyDetails';
 import AboutUS from './pages/AboutUsPage/AboutUs';
 import ScrollToAnchor from './components/ScrollToAnchor';
 import ScrollToTop from './components/ScrollToTop';
@@ -67,6 +69,8 @@ const App = () => {
           </Route>
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogDetails />} />
+          <Route path="/casestudy" element={<CaseStudy />} />
+          <Route path="/casestudy/:id" element={<CaseStudyDetails />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />

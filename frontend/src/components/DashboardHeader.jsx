@@ -44,7 +44,7 @@ import objectiveClogo from '../assets/logo/objectiveClogo.png';
 import firebaselogo from '../assets/logo/firebaselogo.png';
 
 // Cloud Services  Service Icons
-import cloudServices from '../assets/CloudServices.svg';
+import cloudServices from '../assets/cloudServices.svg';
 import awsServices from '../assets/awsServices.svg';
 import GCPServices from '../assets/GCPServices.svg';
 import AzureServices from '../assets/AzureServices.svg';
@@ -97,7 +97,6 @@ import salesforceSDKlogo from '../assets/logo/salesforceSDKlogo.png';
 import salesforcesDataloaderlogo from '../assets/logo/salesforcesDataloaderlogo.png';
 import salesforceappexchangelogo from '../assets/logo/salesforceappexchangelogo.png';
 
-
 // CI/CD DevOps Service Icons
 import CloudDevOpsServices from '../assets/CloudDevOpsServices.svg';
 import AWSDevopsServices from '../assets/AWSDevopsServices.svg';
@@ -115,19 +114,20 @@ import dockerkuberneteslogo from '../assets/logo/dockerkuberneteslogo.png';
 import terraformlogo from '../assets/logo/terraformlogo.png';
 import helmChartslogo from '../assets/logo/helmChartslogo.png';
 
-// import { menuData as technologyMenuData } from "./newheader.menu";
 const sections = [
   { name: "Home", path: "/"},
   { name: "About Us", path: "/aboutus"},
   { name: "Services", path: "/services"},
   { name: "Technology" ,path:"/technology"},
-  { name: "Blogs", path: "/blogs"},
+  { name: "Resources", path: null, isDropdown: true, dropdownItems: [
+    { label: "Blogs", path: "/blogs" },
+    { label: "Case Study", path: "/casestudy" },
+  ]},
   { name: "Portfolio", path: "/portfolio"},
   { name: "Contact Us", path: "/contact"},
 ];
 
 const getTechnologyPath = (title, section) => {
-  // Base paths for each technology
   const titleToPath = {
     "Web Development": "/services/webdevelopment",
     "Mobile Development": "/services/mobiledevelopment",
@@ -137,7 +137,6 @@ const getTechnologyPath = (title, section) => {
     "CI/CD DevOps": "/services/cicddevops"
   };
 
-  // Section IDs for services and tech stack
   const sectionIds = {
     "Web Development": {
       services: "#webdevservices",
@@ -313,21 +312,23 @@ const technologyMenuData = [
   }
 ];
 
-
 const DashboardHeader = ( {iconColor }) => {
   const dropdownCloseTimeout = useRef(null);
   const fallbackColor = useIconColorByBackground();
   const finalColor = iconColor || fallbackColor;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  const resourcesCloseTimeout = useRef(null);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false);
   const [openTechSub, setOpenTechSub] = useState(0); // Set to 0 for first submenu
-  const [mobileTechMenuOpen, setMobileTechMenuOpen] = useState(false);
-  const [mobileOpenTechSub, setMobileOpenTechSub] = useState(null); // index of selected tech category
-  const [showTechSubmenu, setShowTechSubmenu] = useState(false); // true when Technology tab is clicked in mobile menu
+  const [showTechSubmenu, setShowTechSubmenu] = useState(false);
+  const [mobileOpenTechSub, setMobileOpenTechSub] = useState(null);
+
   const location = useLocation();
   const currentPath = location.pathname;
   const navigate = useNavigate();
-
 
   return (
     <header className="dashboard-header">
@@ -349,15 +350,17 @@ const DashboardHeader = ( {iconColor }) => {
           <div className="menu-toggle mobile-only" onClick={() => {
             if (menuOpen) {
               setMenuOpen(false);
-              setMobileTechMenuOpen(false);
+              setShowTechSubmenu(false);
               setMobileOpenTechSub(null);
+              setMobileResourcesOpen(false);
             } else {
               setMenuOpen(true);
             }
           }}>
             {menuOpen ? <AiOutlineClose /> : <FiMenu />}
           </div>
-          {/* Mobile menu overlay, same style as mobile-tech-dropdown */}
+          
+          {/* Mobile menu overlay */}
           {menuOpen && window.innerWidth <= 820 ? (
             <div className="mobile-tech-dropdown-overlay">
               <div className="mobile-tech-dropdown">
@@ -367,21 +370,14 @@ const DashboardHeader = ( {iconColor }) => {
                       <img src={estonsoft} alt="Logo" className="mobile-tech-logo" />
                     </Link>
                   </div>
-                  {/* <div className="mobile-tech-header-center">
-                    //Back button for submenu navigation 
-                    {mobileOpenTechSub !== null && (
-                      <button className="mobile-tech-back" onClick={() => setMobileOpenTechSub(null)}>
-                        <span>&larr;</span> Back
-                      </button>
-                    )}
-                  </div> */}
                   <div className="mobile-tech-header-right">
                     <button 
                       className="mobile-tech-close" 
                       onClick={() => {
                         setMenuOpen(false);
-                        setMobileTechMenuOpen(false);
+                        setShowTechSubmenu(false);
                         setMobileOpenTechSub(null);
+                        setMobileResourcesOpen(false);
                       }}
                     >
                       <AiOutlineClose />
@@ -389,18 +385,21 @@ const DashboardHeader = ( {iconColor }) => {
                   </div>
                 </div>
                 <div className="mobile-tech-list">
-                  {/* Main menu list or submenu */}
-                  {/* Main menu: show sections, unless Technology tab is clicked */}
                   {!showTechSubmenu && mobileOpenTechSub === null ? (
-                    sections.map(({ name, path }) => {
+                    sections.map((section) => {
+                      const { name, path, isDropdown, dropdownItems } = section;
                       const isTechnology = name === "Technology";
+                      const isResources = name === "Resources";
+                      const sectionKey = path || name;
                       return (
-                        <div key={path} className="mobile-tech-item">
+                        <div key={sectionKey} className="mobile-tech-item">
                           <div className="mobile-tech-main">
                             <span
                               onClick={() => {
                                 if (isTechnology) {
                                   setShowTechSubmenu(true);
+                                } else if (isResources) {
+                                  setMobileResourcesOpen(prev => !prev);
                                 } else {
                                   navigate(path);
                                   setMenuOpen(false);
@@ -421,12 +420,39 @@ const DashboardHeader = ( {iconColor }) => {
                                 &gt;
                               </span>
                             )}
+                            {isResources && (
+                              <span
+                                className="mobile-tech-arrow"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setMobileResourcesOpen(prev => !prev);
+                                }}
+                              >
+                                {mobileResourcesOpen ? '\u2304' : '>'}
+                              </span>
+                            )}
                           </div>
+                          {isResources && mobileResourcesOpen && (
+                            <div className="mobile-resources-submenu">
+                              {dropdownItems.map((item) => (
+                                <div
+                                  key={item.path}
+                                  className="mobile-resources-item"
+                                  onClick={() => {
+                                    navigate(item.path);
+                                    setMenuOpen(false);
+                                    setMobileResourcesOpen(false);
+                                  }}
+                                >
+                                  {item.label}
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       );
                     })
                   ) : showTechSubmenu && mobileOpenTechSub === null ? (
-                    // Technology submenu list
                     <div className="mobile-tech-submenu-list">
                       <button className="mobile-tech-back" onClick={() => setShowTechSubmenu(false)}>
                         <span>&larr;</span> Back
@@ -458,7 +484,6 @@ const DashboardHeader = ( {iconColor }) => {
                       ))}
                     </div>
                   ) : (
-                    // Offered Services/Tech Stack for selected tech category
                     <div className="mobile-tech-submenu">
                       <button className="mobile-tech-back" onClick={() => setMobileOpenTechSub(null)}>
                         <span>&larr;</span> Back
@@ -519,16 +544,24 @@ const DashboardHeader = ( {iconColor }) => {
               </div>
             </div>
           ) : (
-            // Desktop nav
             <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-              {sections.map(({ name, path }) => {
+              {sections.map((section) => {
+                const { name, path, isDropdown, dropdownItems } = section;
+                const isResources = name === "Resources";
                 const isTechnology = name === "Technology";
                 const isMobile = window.innerWidth <= 820;
+                const hasDropdown = isResources || isTechnology;
+                const sectionKey = path || name;
                 return (
                   <div
-                    key={path}
-                    className={`nav-item${isTechnology ? " has-dropdown" : ""}`}
+                    key={sectionKey}
+                    className={`nav-item${hasDropdown ? " has-dropdown" : ""}`}
                     onMouseLeave={() => {
+                      if (isResources && !isMobile) {
+                        resourcesCloseTimeout.current = setTimeout(() => {
+                          setResourcesDropdownOpen(false);
+                        }, 300);
+                      }
                       if (isTechnology && !isMobile) {
                         dropdownCloseTimeout.current = setTimeout(() => {
                           setTechnologyDropdownOpen(false);
@@ -537,36 +570,46 @@ const DashboardHeader = ( {iconColor }) => {
                       }
                     }}
                     onMouseEnter={() => {
+                      if (isResources && !isMobile) {
+                        if (resourcesCloseTimeout.current) {
+                          clearTimeout(resourcesCloseTimeout.current);
+                          resourcesCloseTimeout.current = null;
+                        }
+                        setResourcesDropdownOpen(true);
+                      }
                       if (isTechnology && !isMobile) {
                         if (dropdownCloseTimeout.current) {
                           clearTimeout(dropdownCloseTimeout.current);
                           dropdownCloseTimeout.current = null;
                         }
                         setTechnologyDropdownOpen(true);
-                        setOpenTechSub(0); // Keep first submenu open
+                        setOpenTechSub(0);
                       }
                     }}
                   >
                     <div
                       className="nav-link-wrapper"
-                      // ...existing code...
                       onClick={e => {
+                        if (isResources) {
+                          e.preventDefault();
+                          setResourcesDropdownOpen(prev => !prev);
+                        }
                         if (isTechnology) {
                           e.preventDefault();
-                          if (isMobile) {
-                            setMobileTechMenuOpen(true);
-                            setMobileOpenTechSub(null);
-                          } else {
-                            setTechnologyDropdownOpen(true);
-                            setOpenTechSub(null);
-                          }
+                          setTechnologyDropdownOpen(prev => !prev);
                         }
                       }}
-                      style={{ cursor: isTechnology ? "pointer" : undefined }}
+                      style={{ cursor: hasDropdown ? "pointer" : undefined }}
                     >
-                      {isTechnology ? (
+                      {isResources ? (
                         <span
-                          className={`nav-link ${(technologyDropdownOpen && !isMobile) || (isMobile && mobileTechMenuOpen) ? "active" : ""} bold`}
+                          className={`nav-link resources-nav-label ${resourcesDropdownOpen && !isMobile ? "active" : ""} bold`}
+                        >
+                          {name} <span className="resources-caret">{resourcesDropdownOpen && !isMobile ? '▲' : '▾'}</span>
+                        </span>
+                      ) : isTechnology ? (
+                        <span
+                          className={`nav-link ${technologyDropdownOpen && !isMobile ? "active" : ""} bold`}
                         >
                           {name}
                         </span>
@@ -579,65 +622,121 @@ const DashboardHeader = ( {iconColor }) => {
                         </Link>
                       )}
                     </div>
-                    {/* Technology Tab Dropdown - Desktop */}
-                    {isTechnology && technologyDropdownOpen && !isMobile && ReactDOM.createPortal(
-                      <div className="dropdown-menu technology-dropdown-menu">
-                        <div className="newheader-submenu-list">
-                          {technologyMenuData[0].dropdown.map((service, sIdx) => (
-                            <div
-                              key={service.title}
-                              className={`newheader-submenu-title${openTechSub === sIdx ? " active" : ""}`}
-                              onMouseEnter={() => setOpenTechSub(sIdx)}
-                              onClick={() => navigate(getTechnologyPath(service.title))}
-                              style={{ cursor: 'pointer' }}
-                              tabIndex={0}
-                            >
-                              {service.title}
-                            </div>
-                          ))}
-                        </div>
-                        {openTechSub !== null && (
-                          <div className="newheader-tech-multicol">
-                            <div className="newheader-tech-col">
-                              <div className="newheader-tech-col-title">Offered Services</div>
-                              <ul className="newheader-tech-list">
-                                {technologyMenuData[0].dropdown[openTechSub].offeredServices.map((srv) => (
-                                  <li 
-                                    key={srv.label} 
-                                    className="newheader-tech-list-item"
-                                    onClick={() => navigate(getTechnologyPath(technologyMenuData[0].dropdown[openTechSub].title, 'services'))}
-                                    style={{ cursor: 'pointer' }}
-                                  >
-                                    <span className="newheader-tech-icon">
-                                      {srv.isSvg && typeof srv.icon === "string" ? (
-                                        <img src={srv.icon} alt={srv.label} style={{ width: 20, height: 20, verticalAlign: 'middle', display: 'inline-block' }} />
-                                      ) : (
-                                        srv.icon
-                                      )}
-                                    </span> {srv.label}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="newheader-tech-col">
-                              <div className="newheader-tech-col-title">Tech Stack</div>
-                              <ul className="newheader-tech-list">
-                                {technologyMenuData[0].dropdown[openTechSub].techStack.map((tech) => (
-                                  <li 
-                                    key={tech.label} 
-                                    className="newheader-tech-list-item"
-                                    onClick={() => navigate(getTechnologyPath(technologyMenuData[0].dropdown[openTechSub].title, 'techStack'))}
-                                    style={{ cursor: 'pointer' }}
-                                  >
-                                    <span className="newheader-tech-icon">
-                                      <img src={tech.image} alt={tech.label} style={{ width: 20, height: 20, verticalAlign: 'middle', display: 'inline-block' }} />
-                                    </span> {tech.label}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                    
+                    {isResources && resourcesDropdownOpen && !isMobile && (
+                      <div
+                        className="resources-dropdown-menu"
+                        onMouseEnter={() => {
+                          if (resourcesCloseTimeout.current) {
+                            clearTimeout(resourcesCloseTimeout.current);
+                            resourcesCloseTimeout.current = null;
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          resourcesCloseTimeout.current = setTimeout(() => {
+                            setResourcesDropdownOpen(false);
+                          }, 300);
+                        }}
+                      >
+                        {dropdownItems.map((item) => (
+                          <div
+                            key={item.path}
+                            className={`resources-dropdown-item${currentPath === item.path ? " active" : ""}`}
+                            onClick={() => {
+                              navigate(item.path);
+                              setResourcesDropdownOpen(false);
+                            }}
+                          >
+                            {item.label}
                           </div>
-                        )}
+                        ))}
+                      </div>
+                    )}
+
+                    {isTechnology && technologyDropdownOpen && !isMobile && ReactDOM.createPortal(
+                      <div 
+                        className="dropdown-menu technology-dropdown-menu"
+                        onMouseEnter={() => {
+                          if (dropdownCloseTimeout.current) {
+                            clearTimeout(dropdownCloseTimeout.current);
+                            dropdownCloseTimeout.current = null;
+                          }
+                          setTechnologyDropdownOpen(true);
+                        }}
+                        onMouseLeave={() => {
+                          dropdownCloseTimeout.current = setTimeout(() => {
+                            setTechnologyDropdownOpen(false);
+                            setOpenTechSub(null);
+                          }, 500);
+                        }}
+                      >
+                        <div className="technology-dropdown-container">
+                          <div className="newheader-submenu-list">
+                            {technologyMenuData[0].dropdown.map((service, sIdx) => (
+                              <div
+                                key={service.title}
+                                className={`newheader-submenu-title${openTechSub === sIdx ? " active" : ""}`}
+                                onMouseEnter={() => setOpenTechSub(sIdx)}
+                                onClick={() => {
+                                  navigate(getTechnologyPath(service.title));
+                                  setTechnologyDropdownOpen(false);
+                                }}
+                                style={{ cursor: 'pointer' }}
+                                tabIndex={0}
+                              >
+                                {service.title}
+                              </div>
+                            ))}
+                          </div>
+                          {openTechSub !== null && (
+                            <div className="newheader-tech-multicol">
+                              <div className="newheader-tech-col">
+                                <div className="newheader-tech-col-title">Offered Services</div>
+                                <ul className="newheader-tech-list">
+                                  {technologyMenuData[0].dropdown[openTechSub].offeredServices.map((srv, i) => (
+                                    <li 
+                                      key={srv.label} 
+                                      className="newheader-tech-list-item"
+                                      onClick={() => {
+                                        navigate(getTechnologyPath(technologyMenuData[0].dropdown[openTechSub].title, 'services'));
+                                        setTechnologyDropdownOpen(false);
+                                      }}
+                                      style={{ cursor: 'pointer' }}
+                                    >
+                                      <span className="newheader-tech-icon">
+                                        {srv.isSvg && typeof srv.icon === "string" ? (
+                                          <img src={srv.icon} alt={srv.label} style={{ width: 20, height: 20, verticalAlign: 'middle', display: 'inline-block' }} />
+                                        ) : (
+                                          srv.icon
+                                        )}
+                                      </span> {srv.label}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                              <div className="newheader-tech-col">
+                                <div className="newheader-tech-col-title">Tech Stack</div>
+                                <ul className="newheader-tech-list">
+                                  {technologyMenuData[0].dropdown[openTechSub].techStack.map((tech, i) => (
+                                    <li 
+                                      key={tech.label} 
+                                      className="newheader-tech-list-item"
+                                      onClick={() => {
+                                        navigate(getTechnologyPath(technologyMenuData[0].dropdown[openTechSub].title, 'techStack'));
+                                        setTechnologyDropdownOpen(false);
+                                      }}
+                                      style={{ cursor: 'pointer' }}
+                                    >
+                                      <span className="newheader-tech-icon">
+                                        <img src={tech.image} alt={tech.label} style={{ width: 20, height: 20, verticalAlign: 'middle', display: 'inline-block' }} />
+                                      </span> {tech.label}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>,
                       document.body
                     )}
